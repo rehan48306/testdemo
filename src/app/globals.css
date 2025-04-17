@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+:root {
+  /* Base colors */
+  --background: #ffffff;
+  --foreground: #171717;
+  
+  /* Brand colors */
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --secondary: #4f46e5;
+  --accent: #06b6d4;
+  
+  /* Alert status colors */
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  
+  /* Card & surface colors */
+  --card: #ffffff;
+  --card-foreground: #171717;
+  --surface: #f8fafc;
+}
+
+@layer components {
+  .card {
+    @apply rounded-lg border border-gray-200 bg-white p-6 shadow-lg transition-all duration-200;
+  }
+  
+  .comparison-container {
+    @apply grid gap-8 md:grid-cols-2;
+  }
+
+  .animated-alert {
+    @apply transform transition-all duration-300 hover:scale-102;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --card: #171717;
+    --card-foreground: #ededed;
+    --surface: #1a1a1a;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Animation utility classes */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
