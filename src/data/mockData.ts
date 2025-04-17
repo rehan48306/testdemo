@@ -61,7 +61,7 @@ export const progressSteps: ProgressStep[] = [
         icon: 'CheckCircle'
     }
 ];
-export const metrics = {
+export const metrics:any = {
     without: {
         responseTime: '4 hours',
         falsePositives: '75%',

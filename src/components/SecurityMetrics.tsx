@@ -33,7 +33,7 @@ export default function SecurityMetrics() {
               </div>
               <div className="text-green-400">
                 <p className="text-sm">With</p>
-                <p className="text-xl font-bold">{value}</p>
+                <p className="text-xl font-bold">{value as string | number}</p>
               </div>
             </div>
           </motion.div>
